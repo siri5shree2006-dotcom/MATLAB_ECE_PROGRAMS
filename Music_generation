@@ -1,0 +1,14 @@
+clc
+clear all
+close all
+t=0:1/44100:0.5;
+c=sin(2*pi*262*t);
+g=sin(2*pi*392*t);
+a=sin(2*pi*440*t);
+f=sin(2*pi*349*t);
+e=sin(2*pi*330*t);
+d=sin(2*pi*294*t);
+offset = zeros(1,500);
+g=[c offset c offset g offset g offset a offset a offset g offset offset offset ...
+   f offset f  offset e offset e offset d offset d offset c];
+sound(g,44100);
